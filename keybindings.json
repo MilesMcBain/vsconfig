@@ -1,0 +1,200 @@
+// Place your key bindings in this file to override the defaults
+[
+	{
+		"key": "space",
+		"command": "vspacecode.space",
+		"when": "activeEditorGroupEmpty && focusedView == '' && !whichkeyActive"
+	},
+	{
+		"key": "tab",
+		"command": "extension.vim_tab",
+		"when": "editorFocus && vim.active && !inDebugRepl && vim.mode != 'Insert' && editorLangId != 'magit'"
+	},
+	{
+		"key": "tab",
+		"command": "-extension.vim_tab",
+		"when": "editorFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
+	},
+	{
+		"key": "x",
+		"command": "magit.discard-at-point",
+		"when": "editorTextFocus && editorLangId == 'magit' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/"
+	},
+	{
+		"key": "k",
+		"command": "-magit.discard-at-point"
+	},
+	{
+		"key": "-",
+		"command": "magit.reverse-at-point",
+		"when": "editorTextFocus && editorLangId == 'magit' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/"
+	},
+	{
+		"key": "v",
+		"command": "-magit.reverse-at-point"
+	},
+	{
+		"key": "shift+-",
+		"command": "magit.reverting",
+		"when": "editorTextFocus && editorLangId == 'magit' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/"
+	},
+	{
+		"key": "shift+v",
+		"command": "-magit.reverting"
+	},
+	{
+		"key": "shift+o",
+		"command": "magit.resetting",
+		"when": "editorTextFocus && editorLangId == 'magit' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/"
+	},
+	{
+		"key": "shift+x",
+		"command": "-magit.resetting"
+	},
+	{
+		"key": "x",
+		"command": "-magit.reset-mixed"
+	},
+	{
+		"key": "ctrl+u x",
+		"command": "-magit.reset-hard"
+	},
+	{
+		"key": "y",
+		"command": "-magit.show-refs"
+	},
+	{
+		"key": "y",
+		"command": "vspacecode.showMagitRefMenu",
+		"when": "editorTextFocus && editorLangId == 'magit' && vim.mode == 'Normal'"
+	},
+	{
+		"key": "ctrl+j",
+		"command": "workbench.action.quickOpenSelectNext",
+		"when": "inQuickOpen"
+	},
+	{
+		"key": "ctrl+k",
+		"command": "workbench.action.quickOpenSelectPrevious",
+		"when": "inQuickOpen"
+	},
+	{
+		"key": "ctrl+j",
+		"command": "selectNextSuggestion",
+		"when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+	},
+	{
+		"key": "ctrl+k",
+		"command": "selectPrevSuggestion",
+		"when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+	},
+	{
+		"key": "ctrl+j",
+		"command": "showNextParameterHint",
+		"when": "editorFocus && parameterHintsMultipleSignatures && parameterHintsVisible"
+	},
+	{
+		"key": "ctrl+k",
+		"command": "showPrevParameterHint",
+		"when": "editorFocus && parameterHintsMultipleSignatures && parameterHintsVisible"
+	},
+	{
+		"key": "ctrl+h",
+		"command": "file-browser.stepOut",
+		"when": "inFileBrowser"
+	},
+	{
+		"key": "ctrl+l",
+		"command": "file-browser.stepIn",
+		"when": "inFileBrowser"
+	},
+	{
+		"key": "ctrl+k ctrl+h",
+		"command": "workbench.action.focusLeftGroup"
+	},
+	{
+		"key": "ctrl+'",
+		"command": "editor.action.insertSnippet",
+		"when": "editorTextFocus",
+		"args": {
+			"snippet": "<-$0" 
+		}
+	},
+	{
+		"key": "ctrl+shift+'",
+		"command": "editor.action.insertSnippet",
+		"when": "editorTextFocus", 
+		"args": {
+			"snippet": "%>%$0"
+		}
+	},
+	{
+		"key": "ctrl+'",
+		"command": "workbench.action.terminal.sendSequence",
+		"when": "terminalFocus",
+		"args": {
+			"text": "<-" 
+		}
+	},
+	{
+		"key": "ctrl+shift+'",
+		"command": "workbench.action.terminal.sendSequence",
+		"when": "terminalFocus", 
+		"args": {
+			"text": "%>%"
+		}
+	},
+	{
+		"key": "ctrl+k ctrl+left",
+		"command": "-workbench.action.focusLeftGroup"
+	},
+	{
+		"key": "ctrl+; c",
+		"command": "-python.datascience.changeCellToCode",
+		"when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells && !notebookEditorFocused"
+	},
+	{
+		"key": "ctrl+; m",
+		"command": "-python.datascience.changeCellToMarkdown",
+		"when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells && !notebookEditorFocused"
+	},
+	{
+		"key": "ctrl+; x",
+		"command": "-python.datascience.deleteCells",
+		"when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells && !notebookEditorFocused"
+	},
+	{
+		"key": "ctrl+; a",
+		"command": "-python.datascience.insertCellAbove",
+		"when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells && !notebookEditorFocused"
+	},
+	{
+		"key": "ctrl+; b",
+		"command": "-python.datascience.insertCellBelow",
+		"when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells && !notebookEditorFocused"
+	},
+	{
+		"key": "ctrl+; s",
+		"command": "-python.datascience.insertCellBelowPosition",
+		"when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells && !notebookEditorFocused"
+	},
+	{
+		"key": "ctrl+; d",
+		"command": "-python.datascience.moveCellsDown",
+		"when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells && !notebookEditorFocused"
+	},
+	{
+		"key": "ctrl+; u",
+		"command": "-python.datascience.moveCellsUp",
+		"when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells && !notebookEditorFocused"
+	},
+	{
+		"key": "ctrl+shift+;",
+		"command": "-breadcrumbs.focus",
+		"when": "breadcrumbsPossible"
+	},
+	{
+		"key": "ctrl+j",
+		"command": "-workbench.action.togglePanel"
+	}
+]

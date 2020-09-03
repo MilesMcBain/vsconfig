@@ -1,0 +1,186 @@
+{
+    "peacock.favoriteColors": [
+        {
+            "name": "Angular Red",
+            "value": "#b52e31"
+        },
+        {
+            "name": "Auth0 Orange",
+            "value": "#eb5424"
+        },
+        {
+            "name": "Azure Blue",
+            "value": "#007fff"
+        },
+        {
+            "name": "C# Purple",
+            "value": "#68217A"
+        },
+        {
+            "name": "Gatsby Purple",
+            "value": "#639"
+        },
+        {
+            "name": "Go Cyan",
+            "value": "#5dc9e2"
+        },
+        {
+            "name": "Java Blue-Gray",
+            "value": "#557c9b"
+        },
+        {
+            "name": "JavaScript Yellow",
+            "value": "#f9e64f"
+        },
+        {
+            "name": "Mandalorian Blue",
+            "value": "#1857a4"
+        },
+        {
+            "name": "Node Green",
+            "value": "#215732"
+        },
+        {
+            "name": "React Blue",
+            "value": "#00b3e6"
+        },
+        {
+            "name": "Something Different",
+            "value": "#832561"
+        },
+        {
+            "name": "Vue Green",
+            "value": "#42b883"
+        }
+    ],
+    "terminal.integrated.mouseWheelScrollSensitivity": 0,
+    "editor.fontFamily": "Hack",
+    "editor.fontSize": 16,
+    "terminal.integrated.fontFamily": "Hack",
+    "terminal.integrated.fontSize": 16,
+    "explorer.confirmDelete": false,
+    "vim.easymotion": true,
+    "vim.useSystemClipboard": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                " "
+            ],
+            "commands": [
+                "vspacecode.space"
+            ]
+        },
+        {
+            "before": [
+                "<space>"
+            ],
+            "commands": [
+                "vspacecode.space"
+            ]
+        },
+        {
+            "before": [
+                ","
+            ],
+            "commands": [
+                {
+                    "command": "whichkey.show",
+                    "args": [
+                        {
+                            "key": "m",
+                            "name": "make...",
+                            "type": "bindings",
+                            "bindings": [
+                                {
+                                    "key": "m",
+                                    "name": "Run drake::r_make()",
+                                    "type": "command",
+                                    "command": "r.runCommand",
+                                    "args": "drake::r_make()"
+                                },
+                                {
+                                    "key": "r",
+                                    "name": "loadd drake targert at cursor",
+                                    "type": "command",
+                                    "command": "r.runCommandWithSelectionOrWord",
+                                    "args": "drake::loadd($$)"
+                                },
+                                {
+                                    "key": "p",
+                                    "name": "source .packages.R",
+                                    "type": "command",
+                                    "command": "r.runCommand",
+                                    "args": "source('./packages.R')"
+                                }
+                            ]
+                        },
+                        {
+                            "key": "h",
+                            "name": "help...",
+                            "type": "bindings",
+                            "bindings": [
+                                {
+                                    "key": "o",
+                                    "name": "help on object at cursor",
+                                    "type": "command",
+                                    "command": "r.runCommandWithSelectionOrWord",
+                                    "args": "help($$)"
+                                }
+                            ]
+                        },
+                        {
+                            "key": "o",
+                            "name": "output object",
+                            "type": "command",
+                            "command": "r.runCommandWithSelectionOrWord",
+                            "args": "$$"
+                        },
+                        {
+                            "key": "c",
+                            "name": "code...",
+                            "type": "bindings",
+                            "bindings": [
+                                {
+                                    "key": "s",
+                                    "name": "style code file",
+                                    "type": "command",
+                                    "command": "editor.action.formatDocument"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                " "
+            ],
+            "commands": [
+                "vspacecode.space"
+            ]
+        },
+        {
+            "before": [
+                "<space>"
+            ],
+            "commands": [
+                "vspacecode.space"
+            ]
+        }
+    ],
+    "vspacecode.bindingOverrides": [
+        {
+            "keys": "j.g",
+            "name": "Jump go",
+            "type": "command",
+            "command": "workbench.action.showAllSymbols",
+        }
+    ],
+    "r.rterm.windows": "C:\\Users\\msmcbain\\AppData\\Local\\Programs\\Python\\Python38\\Scripts\\radian.exe",
+    "r.bracketedPaste": true,
+    "r.sessionWatcher": true,
+    "workbench.colorTheme": "Bluloco Light"
+}
