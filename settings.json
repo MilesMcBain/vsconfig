@@ -54,7 +54,7 @@
         }
     ],
     "terminal.integrated.mouseWheelScrollSensitivity": 0,
-    "editor.fontFamily": "Hack",
+    "editor.fontFamily": "Input",
     "editor.fontSize": 16,
     "terminal.integrated.fontFamily": "Hack",
     "terminal.integrated.fontSize": 16,
@@ -68,15 +68,17 @@
             ],
             "commands": [
                 "vspacecode.space"
-            ]
+            ],
+            "recursive": false
         },
         {
             "before": [
-                "<space>"
+                " "
             ],
             "commands": [
                 "vspacecode.space"
-            ]
+            ],
+            "recursive": false
         },
         {
             "before": [
@@ -92,6 +94,13 @@
                             "type": "bindings",
                             "bindings": [
                                 {
+                                    "key": "c",
+                                    "name": "clean drake target at cursor",
+                                    "type": "command",
+                                    "command": "r.runCommandWithSelectionOrWord",
+                                    "args": "drake::clean($$)"
+                                },
+                                {
                                     "key": "m",
                                     "name": "Run drake::r_make()",
                                     "type": "command",
@@ -99,18 +108,18 @@
                                     "args": "drake::r_make()"
                                 },
                                 {
-                                    "key": "r",
-                                    "name": "loadd drake targert at cursor",
-                                    "type": "command",
-                                    "command": "r.runCommandWithSelectionOrWord",
-                                    "args": "drake::loadd($$)"
-                                },
-                                {
                                     "key": "p",
                                     "name": "source .packages.R",
                                     "type": "command",
                                     "command": "r.runCommand",
                                     "args": "source('./packages.R')"
+                                },
+                                {
+                                    "key": "r",
+                                    "name": "loadd drake targert at cursor",
+                                    "type": "command",
+                                    "command": "r.runCommandWithSelectionOrWord",
+                                    "args": "drake::loadd($$)"
                                 }
                             ]
                         },
@@ -136,6 +145,20 @@
                             "args": "$$"
                         },
                         {
+                            "key": "t",
+                            "name": "thead object",
+                            "type": "command",
+                            "command": "r.runCommandWithSelectionOrWord",
+                            "args": "t(head($$))"
+                        },
+                        {
+                            "key": "l",
+                            "name": "clip last value",
+                            "type": "command",
+                            "command": "r.runCommand",
+                            "args": "clipr::write_last_clip()"
+                        },
+                        {
                             "key": "c",
                             "name": "code...",
                             "type": "bindings",
@@ -147,9 +170,92 @@
                                     "command": "editor.action.formatDocument"
                                 }
                             ]
+                        },
+                        {
+                            "key": "d",
+                            "name": "devtools...",
+                            "type": "bindings",
+                            "bindings": [
+                                {
+                                    "key": "l",
+                                    "name": "load all",
+                                    "type": "command",
+                                    "command": "r.runCommand",
+                                    "args": "devtools::load_all()"
+                                },
+                                {
+                                    "key": "d",
+                                    "name": "document",
+                                    "type": "command",
+                                    "command": "r.runCommand",
+                                    "args": "devtools::document()"
+                                },
+                                {
+                                    "key": "c",
+                                    "name": "check",
+                                    "type": "command",
+                                    "command": "r.runCommand",
+                                    "args": "devtools::check()"
+                                },
+                                {
+                                    "key": "i",
+                                    "name": "install",
+                                    "type": "command",
+                                    "command": "r.runCommand",
+                                    "args": "devtools::install()"
+                                }
+                            ]
+                        },
+                        {
+                            "key": "r",
+                            "name": "rmarkdown...",
+                            "type": "bindings",
+                            "bindings": [
+                                {
+                                    "key": "r",
+                                    "name": "render document",
+                                    "type": "command",
+                                    "command": "r.runCommandWithEditorPath",
+                                    "args": "rmarkdown::render(\"$$\", output_format = 'all')"
+                                },
+{
+                                    "key": "v",
+                                    "name": "view document",
+                                    "type": "command",
+                                    "command": "r.runCommandWithEditorPath",
+                                    "args": ".vsc.viewer(gsub('.rmd', '.html', '$$', ignore.case = TRUE))"
+                                }
+                            ]
                         }
                     ]
                 }
+            ],
+            "recursive": false
+        },
+        {
+            "before": [
+                " "
+            ],
+            "commands": [
+                "vspacecode.space"
+            ],
+            "recursive": false
+        },
+        {
+            "before": [
+                " "
+            ],
+            "commands": [
+                "vspacecode.space"
+            ],
+            "recursive": false
+        },
+        {
+            "before": [
+                "<space>"
+            ],
+            "commands": [
+                "vspacecode.space"
             ]
         }
     ],
@@ -160,7 +266,35 @@
             ],
             "commands": [
                 "vspacecode.space"
-            ]
+            ],
+            "recursive": false
+        },
+        {
+            "before": [
+                " "
+            ],
+            "commands": [
+                "vspacecode.space"
+            ],
+            "recursive": false
+        },
+        {
+            "before": [
+                " "
+            ],
+            "commands": [
+                "vspacecode.space"
+            ],
+            "recursive": false
+        },
+        {
+            "before": [
+                " "
+            ],
+            "commands": [
+                "vspacecode.space"
+            ],
+            "recursive": false
         },
         {
             "before": [
@@ -182,5 +316,47 @@
     "r.rterm.windows": "C:\\Users\\msmcbain\\AppData\\Local\\Programs\\Python\\Python38\\Scripts\\radian.exe",
     "r.bracketedPaste": true,
     "r.sessionWatcher": true,
-    "workbench.colorTheme": "Bluloco Light"
+    "workbench.colorTheme": "Dracula",
+    "workbench.panel.defaultLocation": "right",
+    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "r.lsp.debug": true,
+    "cSpell.enabledLanguageIds": [
+        "asciidoc",
+        "c",
+        "cpp",
+        "csharp",
+        "css",
+        "git-commit",
+        "go",
+        "handlebars",
+        "haskell",
+        "html",
+        "jade",
+        "java",
+        "javascript",
+        "javascriptreact",
+        "json",
+        "jsonc",
+        "latex",
+        "less",
+        "markdown",
+        "php",
+        "plaintext",
+        "python",
+        "pug",
+        "restructuredtext",
+        "rust",
+        "scala",
+        "scss",
+        "text",
+        "typescript",
+        "typescriptreact",
+        "yaml",
+        "yml",
+        "r",
+        "rmd"
+    ],
+    "r.lsp.path": "C:\\R\\R-4.0.2\\bin\\x64\\R.exe",
+    "window.zoomLevel": 1,
+    "editor.lineHeight": 20
 }
