@@ -1,11 +1,6 @@
 // Place your key bindings in this file to override the defaults
 [
 	{
-		"key": "space",
-		"command": "vspacecode.space",
-		"when": "activeEditorGroupEmpty && focusedView == '' && !whichkeyActive"
-	},
-	{
 		"key": "tab",
 		"command": "extension.vim_tab",
 		"when": "editorFocus && vim.active && !inDebugRepl && vim.mode != 'Insert' && editorLangId != 'magit'"
@@ -196,5 +191,20 @@
 	{
 		"key": "ctrl+j",
 		"command": "-workbench.action.togglePanel"
+	},
+	{
+		"key": "ctrl+l",
+		"command": "acceptSelectedSuggestion",
+		"when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+	},
+	{
+		"key": "space",
+		"command": "vspacecode.space",
+		"when": "activeEditorGroupEmpty && focusedView == '' && !whichkeyActive && !inQuickOpen"
+	},
+	{
+		"key": "space",
+		"command": "vspacecode.space",
+		"when": "activeEditorGroupEmpty && focusedView == '' && !whichkeyActive && !inputFocus"
 	}
 ]
