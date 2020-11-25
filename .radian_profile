@@ -1,3 +1,4 @@
 options(
     radian.editing_mode = "vi",
-    radian.suppress_reticulate_message = TRUE)
+    radian.suppress_reticulate_message = TRUE,
+    radian.auto_match = FALSE)

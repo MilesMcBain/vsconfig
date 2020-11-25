@@ -8,5 +8,4 @@ options(vsc.plot = "Two",
         vsc.browser = FALSE,
         vsc.viewer = FALSE,
         vsc.page_viewer = FALSE,
-        vsc.rstudioapi = TRUE,
-        help_type = "text")
+        vsc.rstudioapi = TRUE)

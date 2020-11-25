@@ -108,6 +108,13 @@
                                     "args": "drake::r_make()"
                                 },
                                 {
+                                    "key": "t",
+                                    "name": "Run targets::tar_make()",
+                                    "type": "command",
+                                    "command": "r.runCommand",
+                                    "args": "targets::tar_make()"
+                                },
+                                {
                                     "key": "p",
                                     "name": "source .packages.R",
                                     "type": "command",
@@ -120,6 +127,13 @@
                                     "type": "command",
                                     "command": "r.runCommandWithSelectionOrWord",
                                     "args": "drake::loadd($$)"
+                                },
+                                {
+                                    "key": "w",
+                                    "name": "load target workspace at cursor",
+                                    "type": "command",
+                                    "command": "r.runCommandWithSelectionOrWord",
+                                    "args": "targets::tar_workspace($$)"
                                 }
                             ]
                         },
@@ -233,7 +247,7 @@
                                     "args": {
                                         "snippet": "```{r}\n$0\n```"
                                     }
-                                }                  
+                                }
                             ]
                         },
                         {
@@ -247,6 +261,34 @@
                                     "type": "command",
                                     "command": "r.runCommand",
                                     "args": "fnmate:::rs_fnmate()"
+                                }
+                            ]
+                        },
+                        {
+                            "key": "j",
+                            "name": "jump to local definition",
+                            "type": "command",
+                            "command": "r.runCommand",
+                            "args": "fnmate::rs_fn_defn_jump()"
+                        },
+                        {
+                            "key": "s",
+                            "name": "spatial...",
+                            "type": "bindings",
+                            "bindings": [
+                                {
+                                    "key": "v",
+                                    "name": "mapview() object",
+                                    "type": "command",
+                                    "command": "r.runCommandWithSelectionOrWord",
+                                    "args": "mapview::mapview($$)"
+                                },
+                                {
+                                    "key": "e",
+                                    "name": "mapedit() object",
+                                    "type": "command",
+                                    "command": "r.runCommandWithSelectionOrWord",
+                                    "args": "mapedit::editMap(mapview::mapview($$))"
                                 }
                             ]
                         }
@@ -290,18 +332,6 @@
                 "vspacecode.space"
             ]
         }
-        // {
-        //     "before": [
-        //         ","
-        //     ],
-        //     "commands": [
-        //         "vspacecode.space",
-        //         {
-        //             "command": "whichkey.triggerKey",
-        //             "args": "m"
-        //         }
-        //     ]
-        // }
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
         {
@@ -356,19 +386,8 @@
             "commands": [
                 "vspacecode.space"
             ]
-        },
-        {
-            "before": [
-                ","
-            ],
-            "commands": [
-                "vspacecode.space",
-                {
-                    "command": "whichkey.triggerKey",
-                    "args": "m"
-                }
-            ]
         }
+
     ],
     "vspacecode.bindingOverrides": [
         {
@@ -420,7 +439,7 @@
         "rmd",
         "Rmd"
     ],
-    "r.lsp.path": "/usr/bin/R",
+    "r.lsp.path": "C:/R/R-4.0.2/bin/x64/R/R.exe",
     "window.zoomLevel": 1,
     "editor.lineHeight": 20,
     "cSpell.enabled": false,
@@ -3073,5 +3092,9 @@
                 }
             ]
         }
-    ]
+    ],
+    "r.rterm.windows": "C:/Users/msmcbain/AppData/Local/Programs/Python/Python38/Scripts/radian.exe",
+    "r.bracketedPaste": true,
+    "files.eol": "\n",
+    "editor.renderWhitespace": "none"
 }
