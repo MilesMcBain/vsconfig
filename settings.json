@@ -129,6 +129,13 @@
                                     "args": "drake::loadd($$)"
                                 },
                                 {
+                                    "key": "l",
+                                    "name": "load targets targert at cursor",
+                                    "type": "command",
+                                    "command": "r.runCommandWithSelectionOrWord",
+                                    "args": "targets::tar_load($$)"
+                                },
+                                {
                                     "key": "w",
                                     "name": "load target workspace at cursor",
                                     "type": "command",

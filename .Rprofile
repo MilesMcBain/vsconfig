@@ -1,6 +1,7 @@
 options(repos = structure(c(CRAN = "https://cran.rstudio.com")),
         browser = NULL,
-        viewer = NULL)
+        viewer = NULL,
+        tidyverse.quiet = TRUE)
 
 
 options(vsc.plot = "Two",
