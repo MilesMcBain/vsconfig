@@ -224,7 +224,15 @@
                                     "type": "command",
                                     "command": "r.runCommand",
                                     "args": "devtools::install()"
-                                }
+                                },
+                                {
+                                    "key": "t",
+                                    "name": "test",
+                                    "type": "command",
+                                    "command": "r.runCommand",
+                                    "args": "devtools::test()"
+                                },
+
                             ]
                         },
                         {
@@ -406,7 +414,6 @@
     ],
     "r.sessionWatcher": true,
     "workbench.colorTheme": "Dracula",
-    "workbench.panel.defaultLocation": "right",
     "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
     "r.lsp.debug": true,
     "cSpell.enabledLanguageIds": [
@@ -449,7 +456,7 @@
     "r.lsp.path": "C:/R/R-4.0.2/bin/x64/R/R.exe",
     "window.zoomLevel": 1,
     "editor.lineHeight": 20,
-    "cSpell.enabled": false,
+    "cSpell.enabled": true,
     "cSpell.userWords": [
         "Anazc",
         "geospatial",
@@ -3102,6 +3109,8 @@
     ],
     "r.rterm.windows": "C:/Users/msmcbain/AppData/Local/Programs/Python/Python38/Scripts/radian.exe",
     "r.bracketedPaste": true,
+    "r.rmarkdown.enableCodeLens": false,
     "files.eol": "\n",
-    "editor.renderWhitespace": "none"
+    "editor.renderWhitespace": "none",
+    "diffEditor.ignoreTrimWhitespace": false
 }
