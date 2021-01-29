@@ -2,15 +2,43 @@
     "peacock.favoriteColors": [
         {
             "name": "Angular Red",
-            "value": "#b52e31"
-        },
-        {
-            "name": "Auth0 Orange",
-            "value": "#eb5424"
+            "value": "#dd0531"
         },
         {
             "name": "Azure Blue",
             "value": "#007fff"
+        },
+        {
+            "name": "JavaScript Yellow",
+            "value": "#f9e64f"
+        },
+        {
+            "name": "Mandalorian Blue",
+            "value": "#1857a4"
+        },
+        {
+            "name": "Node Green",
+            "value": "#215732"
+        },
+        {
+            "name": "React Blue",
+            "value": "#61dafb"
+        },
+        {
+            "name": "Something Different",
+            "value": "#832561"
+        },
+        {
+            "name": "Svelte Orange",
+            "value": "#ff3d00"
+        },
+        {
+            "name": "Vue Green",
+            "value": "#42b883"
+        },
+        {
+            "name": "Auth0 Orange",
+            "value": "#eb5424"
         },
         {
             "name": "C# Purple",
@@ -27,30 +55,6 @@
         {
             "name": "Java Blue-Gray",
             "value": "#557c9b"
-        },
-        {
-            "name": "JavaScript Yellow",
-            "value": "#f9e64f"
-        },
-        {
-            "name": "Mandalorian Blue",
-            "value": "#1857a4"
-        },
-        {
-            "name": "Node Green",
-            "value": "#215732"
-        },
-        {
-            "name": "React Blue",
-            "value": "#00b3e6"
-        },
-        {
-            "name": "Something Different",
-            "value": "#832561"
-        },
-        {
-            "name": "Vue Green",
-            "value": "#42b883"
         }
     ],
     "terminal.integrated.mouseWheelScrollSensitivity": 0,
@@ -155,6 +159,18 @@
                                     "type": "command",
                                     "command": "r.runCommandWithSelectionOrWord",
                                     "args": "help($$)"
+                                },
+                                {
+                                    "key": "h",
+                                    "name": "show hover information on object at cursor",
+                                    "type": "command",
+                                    "command": "editor.action.showHover"
+                                },
+                                {
+                                    "key": "d",
+                                    "name": "show DocsView pane",
+                                    "type": "command",
+                                    "command": "docsView.documentation.focus"
                                 }
                             ]
                         },
@@ -173,11 +189,11 @@
                             "args": "t(head($$))"
                         },
                         {
-                            "key": "l",
-                            "name": "clip last value",
+                            "key": "b",
+                            "name": "break chain and run",
                             "type": "command",
                             "command": "r.runCommand",
-                            "args": "clipr::write_last_clip()"
+                            "args": "breakerofchains::break_chain()"
                         },
                         {
                             "key": "c",
@@ -185,8 +201,8 @@
                             "type": "bindings",
                             "bindings": [
                                 {
-                                    "key": "s",
-                                    "name": "style code file",
+                                    "key": "f",
+                                    "name": "format code file",
                                     "type": "command",
                                     "command": "editor.action.formatDocument"
                                 }
@@ -232,7 +248,6 @@
                                     "command": "r.runCommand",
                                     "args": "devtools::test()"
                                 },
-
                             ]
                         },
                         {
@@ -402,7 +417,6 @@
                 "vspacecode.space"
             ]
         }
-
     ],
     "vspacecode.bindingOverrides": [
         {
@@ -471,7 +485,6 @@
         "aws-miles-dev": "linux"
     },
     "vspacecode.bindings": [
-    
         {
             "key": " ",
             "name": "Commands...",
@@ -3112,5 +3125,18 @@
     "r.rmarkdown.enableCodeLens": false,
     "files.eol": "\n",
     "editor.renderWhitespace": "none",
-    "diffEditor.ignoreTrimWhitespace": false
+    "diffEditor.ignoreTrimWhitespace": false,
+    "workbench.startupEditor": "welcomePage",
+    "output.smartScroll.enabled": false,
+    "docsView.documentationView.updateMode": "sticky",
+    "workbench.activityBar.visible": true,
+    "workbench.editor.showTabs": true,
+    "mssql.connections": [
+        {
+            "server": "{{put-server-name-here}}",
+            "database": "{{put-database-name-here}}",
+            "user": "{{put-username-here}}",
+            "password": "{{put-password-here}}"
+        }
+    ]
 }
