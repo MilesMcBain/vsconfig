@@ -205,6 +205,20 @@
                                     "name": "format code file",
                                     "type": "command",
                                     "command": "editor.action.formatDocument"
+                                },
+                                {
+                                    "key": "s",
+                                    "name": "source() code file",
+                                    "type": "command",
+                                    "command": "r.runCommandWithEditorPath",
+                                    "args": "source(\"$$\")"
+                                },
+                                {
+                                    "key": "d",
+                                    "name": "debugonce object at cursor",
+                                    "type": "command",
+                                    "command": "r.runCommandWithSelectionOrWord",
+                                    "args": "debugonce($$)"
                                 }
                             ]
                         },
@@ -467,10 +481,7 @@
         "rmd",
         "Rmd"
     ],
-    "r.lsp.path": "C:/R/R-4.0.2/bin/x64/R/R.exe",
-    "window.zoomLevel": 1,
-    "editor.lineHeight": 20,
-    "cSpell.enabled": true,
+    "cSpell.enabled": false,
     "cSpell.userWords": [
         "Anazc",
         "geospatial",
@@ -3131,12 +3142,4 @@
     "docsView.documentationView.updateMode": "sticky",
     "workbench.activityBar.visible": true,
     "workbench.editor.showTabs": true,
-    "mssql.connections": [
-        {
-            "server": "{{put-server-name-here}}",
-            "database": "{{put-database-name-here}}",
-            "user": "{{put-username-here}}",
-            "password": "{{put-password-here}}"
-        }
-    ]
-}
+    "mssql.connec
