@@ -219,6 +219,20 @@
                                     "type": "command",
                                     "command": "r.runCommandWithSelectionOrWord",
                                     "args": "debugonce($$)"
+                                },
+                                {
+                                    "key": "r",
+                                    "name": "set error = recover on",
+                                    "type": "command",
+                                    "command": "r.runCommand",
+                                    "args": "options(error = recover)"
+                                },
+                                {
+                                    "key": "R",
+                                    "name": "set error = recover off",
+                                    "type": "command",
+                                    "command": "r.runCommand",
+                                    "args": "options(error = NULL)"
                                 }
                             ]
                         },
@@ -3133,13 +3147,4 @@
     ],
     "r.rterm.windows": "C:/Users/msmcbain/AppData/Local/Programs/Python/Python38/Scripts/radian.exe",
     "r.bracketedPaste": true,
-    "r.rmarkdown.enableCodeLens": false,
-    "files.eol": "\n",
-    "editor.renderWhitespace": "none",
-    "diffEditor.ignoreTrimWhitespace": false,
-    "workbench.startupEditor": "welcomePage",
-    "output.smartScroll.enabled": false,
-    "docsView.documentationView.updateMode": "sticky",
-    "workbench.activityBar.visible": true,
-    "workbench.editor.showTabs": true,
-    "mssql.connec
+    "r.rmarkdown.enableCodeLens": f
