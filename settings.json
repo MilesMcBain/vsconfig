@@ -158,7 +158,7 @@
                                     "name": "help on object at cursor",
                                     "type": "command",
                                     "command": "r.runCommandWithSelectionOrWord",
-                                    "args": "help($$)"
+                                    "args": "rmdocs::rmd_help($$)"
                                 },
                                 {
                                     "key": "h",
@@ -182,13 +182,6 @@
                             "args": "$$"
                         },
                         {
-                            "key": "t",
-                            "name": "thead object",
-                            "type": "command",
-                            "command": "r.runCommandWithSelectionOrWord",
-                            "args": "t(head($$))"
-                        },
-                        {
                             "key": "b",
                             "name": "break chain and run",
                             "type": "command",
@@ -202,9 +195,10 @@
                             "bindings": [
                                 {
                                     "key": "f",
-                                    "name": "format code file",
+                                    "name": "format code file (mmstyle)",
                                     "type": "command",
-                                    "command": "editor.action.formatDocument"
+                                    "command": "r.runCommandWithEditorPath",
+                                    "args": "mmstyle::style_file('$$')"
                                 },
                                 {
                                     "key": "s",
@@ -233,6 +227,13 @@
                                     "type": "command",
                                     "command": "r.runCommand",
                                     "args": "options(error = NULL)"
+                                },
+                                {
+                                    "key": "b",
+                                    "name": "browse function source in new window",
+                                    "type": "command",
+                                    "command": "r.runCommandWithSelectionOrWord",
+                                    "args": "rstudioapi::documentNew(paste0(as.character(styler::style_text(deparse($$))), collapse = '\\n'))"
                                 }
                             ]
                         },
@@ -319,6 +320,13 @@
                                     "type": "command",
                                     "command": "r.runCommand",
                                     "args": "fnmate:::rs_fnmate()"
+                                },
+                                {
+                                    "key": "j",
+                                    "name": "jump to function definiton (fnmate)",
+                                    "type": "command",
+                                    "command": "r.runCommand",
+                                    "args": "fnmate::rs_fn_defn_jump()"
                                 }
                             ]
                         },
@@ -326,8 +334,7 @@
                             "key": "j",
                             "name": "jump to local definition",
                             "type": "command",
-                            "command": "r.runCommand",
-                            "args": "fnmate::rs_fn_defn_jump()"
+                            "command": "editor.action.revealDefinition"
                         },
                         {
                             "key": "s",
@@ -347,6 +354,34 @@
                                     "type": "command",
                                     "command": "r.runCommandWithSelectionOrWord",
                                     "args": "mapedit::editMap(mapview::mapview($$))"
+                                }
+                            ]
+                        },
+                        {
+                            "key": "v",
+                            "name": "view...",
+                            "type": "bindings",
+                            "bindings": [
+                                {
+                                    "key": "v",
+                                    "name": "View() object",
+                                    "type": "command",
+                                    "command": "r.runCommandWithSelectionOrWord",
+                                    "args": "View($$)"
+                                },
+                                {
+                                    "key": "s",
+                                    "name": "str() object",
+                                    "type": "command",
+                                    "command": "r.runCommandWithSelectionOrWord",
+                                    "args": "str($$)"
+                                },
+                                {
+                                    "key": "t",
+                                    "name": "t(head()) object",
+                                    "type": "command",
+                                    "command": "r.runCommandWithSelectionOrWord",
+                                    "args": "t(head($$))"
                                 }
                             ]
                         }
@@ -455,7 +490,6 @@
         }
     ],
     "r.sessionWatcher": true,
-    "workbench.colorTheme": "Dracula",
     "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
     "r.lsp.debug": true,
     "cSpell.enabledLanguageIds": [
@@ -3145,6 +3179,45 @@
             ]
         }
     ],
-    "r.rterm.windows": "C:/Users/msmcbain/AppData/Local/Programs/Python/Python38/Scripts/radian.exe",
+    "r.rterm.windows": "C:\\Users\\msmcbain\\AppData\\Local\\Programs\\Python\\Python38\\Scripts\\radian.exe",
     "r.bracketedPaste": true,
-    "r.rmarkdown.enableCodeLens": f
+    "r.rmarkdown.enableCodeLens": false,
+    "files.eol": "\n",
+    "editor.renderWhitespace": "none",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "workbench.startupEditor": "welcomePage",
+    "output.smartScroll.enabled": false,
+    "docsView.documentationView.updateMode": "sticky",
+    "workbench.activityBar.visible": true,
+    "workbench.editor.showTabs": true,
+    "mssql.connections": [
+        {
+            "server": "{{put-server-name-here}}",
+            "database": "{{put-database-name-here}}",
+            "user": "{{put-username-here}}",
+            "password": "{{put-password-here}}"
+        }
+    ],
+    "workbench.sideBar.location": "right",
+    "editor.lineHeight": 24,
+    "liveshare.audio.joinCallBehavior": "accept",
+    "editor.acceptSuggestionOnEnter": "off",
+    "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.tabSize": 8,
+    "editor.cursorStyle": "line",
+    "editor.insertSpaces": false,
+    "editor.lineNumbers": "on",
+    "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+    "editor.wordWrap": "off",
+    "workbench.colorTheme": "Gatito Theme",
+    "terminal.integrated.tabs.enabled": false,
+    "window.zoomLevel": 1
+}

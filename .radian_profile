@@ -1,4 +1,5 @@
 options(
     radian.editing_mode = "vi",
     radian.suppress_reticulate_message = TRUE,
-    radian.auto_match = FALSE)
+    radian.auto_match = FALSE,
+    radian.complete_while_typing = FALSE)
