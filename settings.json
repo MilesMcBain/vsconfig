@@ -158,7 +158,7 @@
                                     "name": "help on object at cursor",
                                     "type": "command",
                                     "command": "r.runCommandWithSelectionOrWord",
-                                    "args": "rmdocs::rmd_help($$)"
+                                    "args": "rmdocs::rs_rmd_help()"
                                 },
                                 {
                                     "key": "h",
@@ -172,6 +172,21 @@
                                     "type": "command",
                                     "command": "docsView.documentation.focus"
                                 }
+                            ]
+                        },
+                        {
+                            "key": "i",
+                            "name": "insert...",
+                            "type": "bindings",
+                            "bindings": [
+                                {
+                                    "key": "c",
+                                    "name": "insert dput(.chain)",
+                                    "type": "command",
+                                    "command": "r.runCommand",
+                                    "args": "rstudioapi::insertText(paste0(deparse(.chain), collapse = '\n'))"
+                                }
+
                             ]
                         },
                         {
