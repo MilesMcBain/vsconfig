@@ -93,6 +93,27 @@
                     "command": "whichkey.show",
                     "args": [
                         {
+                            "key": "e",
+                            "name": "evaluate in terminal",
+                            "type": "command",
+                            "command": "workbench.action.terminal.runSelectedText"
+                            
+                        },
+                        {
+                            "key": "a",
+                            "name": "app...",
+                            "type": "bindings",
+                            "bindings": [
+                                {
+                                    "key": "r",
+                                    "name": "shiny::runApp()",
+                                    "type": "command",
+                                    "command": "r.runCommandWithEditorPath",
+                                    "args": "shiny::runApp()"                               
+                                }
+                            ]
+                        },
+                        {
                             "key": "m",
                             "name": "make...",
                             "type": "bindings",
@@ -119,6 +140,13 @@
                                     "args": "targets::tar_make()"
                                 },
                                 {
+                                    "key": "T",
+                                    "name": "tar_make() current plan",
+                                    "type": "command",
+                                    "command": "r.runCommand",
+                                    "args": "tflow::rs_tar_make_current_plan()"
+                                },
+                                {
                                     "key": "p",
                                     "name": "source .packages.R",
                                     "type": "command",
@@ -140,12 +168,27 @@
                                     "args": "targets::tar_load($$)"
                                 },
                                 {
+                                    "key": "L",
+                                    "name": "load targets targert at cursor from any store",
+                                    "type": "command",
+                                    "command": "r.runCommand",
+                                    "args": "tflow::rs_load_target_at_cursor_from_any_plan()"
+                                },
+                                {
                                     "key": "w",
                                     "name": "load target workspace at cursor",
                                     "type": "command",
                                     "command": "r.runCommandWithSelectionOrWord",
                                     "args": "targets::tar_workspace($$)"
+                                },
+                                {
+                                    "key": "e",
+                                    "name": "load editor targets",
+                                    "type": "command",
+                                    "command": "r.runCommand",
+                                    "args": "tflow::rs_load_current_editor_targets()"
                                 }
+
                             ]
                         },
                         {
@@ -197,6 +240,27 @@
                             "args": "$$"
                         },
                         {
+                            "key": "p",
+                            "name": "portal...",
+                            "type": "bindings",
+                            "bindings": [
+                                {
+                                    "key": "p",
+                                    "name": "portal push ->(0)",
+                                    "type": "command",
+                                    "command": "r.runCommandWithSelectionOrWord",
+                                    "args": "portal::push($$)"
+                                },
+                                {
+                                    "key": "P",
+                                    "name": "portal pull (0)->",
+                                    "type": "command",
+                                    "command": "r.runCommandWithSelectionOrWord",
+                                    "args": "portal::pull(local_name = $$)"
+                                }
+                            ]
+                        },
+                        {
                             "key": "b",
                             "name": "break chain and run",
                             "type": "command",
@@ -208,6 +272,13 @@
                             "name": "code...",
                             "type": "bindings",
                             "bindings": [
+                                {
+                                    "key": "a",
+                                    "name": "abort execution",
+                                    "type": "command",
+                                    "command": "r.runCommand",
+                                    "args": "\u0003"
+                                },
                                 {
                                     "key": "f",
                                     "name": "format code file (mmstyle)",
@@ -221,6 +292,14 @@
                                     "type": "command",
                                     "command": "r.runCommandWithEditorPath",
                                     "args": "source(\"$$\")"
+                                },
+                                {
+                                    "key": "l",
+                                    "name": "source all files in ./R",
+                                    "type": "command",
+                                    "command": "r.runCommand",
+                                    "args": "lapply(list.files('R', full.names = TRUE), source)"
+
                                 },
                                 {
                                     "key": "d",
@@ -397,6 +476,13 @@
                                     "type": "command",
                                     "command": "r.runCommandWithSelectionOrWord",
                                     "args": "t(head($$))"
+                                },
+                                {
+                                    "key": "c",
+                                    "name": "cloud_view() object",
+                                    "type": "command",
+                                    "command": "r.runCommandWithSelectionOrWord",
+                                    "args": "cloud_view($$)"
                                 }
                             ]
                         }
@@ -556,7 +642,8 @@
     "gitlens.mode.active": "zen",
     "remote.SSH.configFile": "C:\\Users\\msmcbain\\.ssh\\config",
     "remote.SSH.remotePlatform": {
-        "aws-miles-dev": "linux"
+        "aws-miles-dev": "linux",
+        "qfes-shiny": "linux"
     },
     "vspacecode.bindings": [
         {
@@ -3195,25 +3282,22 @@
         }
     ],
     "r.rterm.windows": "C:\\Users\\msmcbain\\AppData\\Local\\Programs\\Python\\Python38\\Scripts\\radian.exe",
-    "r.bracketedPaste": true,
     "r.rmarkdown.enableCodeLens": false,
     "files.eol": "\n",
     "editor.renderWhitespace": "none",
     "diffEditor.ignoreTrimWhitespace": false,
-    "workbench.startupEditor": "welcomePage",
+    "workbench.startupEditor": "none",
     "output.smartScroll.enabled": false,
     "docsView.documentationView.updateMode": "sticky",
-    "workbench.activityBar.visible": true,
     "workbench.editor.showTabs": true,
     "mssql.connections": [
         {
             "server": "{{put-server-name-here}}",
             "database": "{{put-database-name-here}}",
             "user": "{{put-username-here}}",
-            "password": "{{put-password-here}}"
+            "password": ""
         }
     ],
-    "workbench.sideBar.location": "right",
     "editor.lineHeight": 24,
     "liveshare.audio.joinCallBehavior": "accept",
     "editor.acceptSuggestionOnEnter": "off",
@@ -3226,13 +3310,59 @@
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "editor.tabSize": 8,
+    "editor.tabSize": 2,
     "editor.cursorStyle": "line",
-    "editor.insertSpaces": false,
     "editor.lineNumbers": "on",
     "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
     "editor.wordWrap": "off",
     "workbench.colorTheme": "Gatito Theme",
-    "terminal.integrated.tabs.enabled": false,
-    "window.zoomLevel": 1
+    "editor.bracketPairColorization.enabled": true,
+    "terminal.integrated.commandsToSkipShell": [
+        "language-julia.interrupt"
+    ],
+    "julia.symbolCacheDownload": true,
+    "julia.enableTelemetry": false,
+    "zenMode.centerLayout": false,
+    "peacock.affectAccentBorders": false,
+    "files.insertFinalNewline": true,
+    "errorLens.enabled": true,
+    "window.zoomLevel": 1,
+    "r.session.viewers.viewColumn": {
+        "browser": "Beside"
+    },
+    "r.bracketedPaste": true,
+    "json.schemas": [],
+    "redhat.telemetry.enabled": true,
+    "yaml.customTags": [
+        "!And",
+        "!And sequence",
+        "!If",
+        "!If sequence",
+        "!Not",
+        "!Not sequence",
+        "!Equals",
+        "!Equals sequence",
+        "!Or",
+        "!Or sequence",
+        "!FindInMap",
+        "!FindInMap sequence",
+        "!Base64",
+        "!Join",
+        "!Join sequence",
+        "!Cidr",
+        "!Ref",
+        "!Sub",
+        "!Sub sequence",
+        "!GetAtt",
+        "!GetAZs",
+        "!ImportValue",
+        "!ImportValue sequence",
+        "!Select",
+        "!Select sequence",
+        "!Split",
+        "!Split sequence"
+    ],
+    "workbench.sideBar.location": "right",
+    "workbench.activityBar.visible": false,
+    "terminal.integrated.tabs.enabled": false
 }

@@ -112,11 +112,19 @@
 		}
 	},
 	{
-		"key": "ctrl+shift+'",
+		"key": "ctrl+alt+shift+'",
 		"command": "editor.action.insertSnippet",
 		"when": "editorTextFocus", 
 		"args": {
 			"snippet": "%>%$0"
+		}
+	},
+	{
+		"key": "ctrl+shift+'",
+		"command": "editor.action.insertSnippet",
+		"when": "editorTextFocus", 
+		"args": {
+			"snippet": "|>$0"
 		}
 	},
 	{
@@ -128,11 +136,19 @@
 		}
 	},
 	{
-		"key": "ctrl+shift+'",
+		"key": "ctrl+alt+shift+'",
 		"command": "workbench.action.terminal.sendSequence",
 		"when": "terminalFocus", 
 		"args": {
 			"text": "%>%"
+		}
+	},
+	{
+		"key": "ctrl+shift+'",
+		"command": "workbench.action.terminal.sendSequence",
+		"when": "terminalFocus", 
+		"args": {
+			"text": "|>"
 		}
 	},
 	{
@@ -627,5 +643,23 @@
 		"key": "ctrl+end",
 		"command": "-workbench.action.terminal.scrollToBottom",
 		"when": "terminalFocus && terminalProcessSupported"
+	},
+	{
+		"key": "ctrl+shift+tab",
+		"command": "workbench.action.quickOpenLeastRecentlyUsedEditorInGroup",
+		"when": "editorFocus"
+	},
+	{
+		"key": "ctrl+shift+tab",
+		"command": "-workbench.action.quickOpenLeastRecentlyUsedEditorInGroup"
+	},
+	{
+		"key": "ctrl+shift+`",
+		"command": "-workbench.action.terminal.new",
+		"when": "terminalProcessSupported"
+	},
+	{
+		"key": "ctrl+shift+`",
+		"command": "workbench.action.quickOpenTerm"
 	}
 ]
