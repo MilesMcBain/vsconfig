@@ -268,6 +268,13 @@
                             "args": "breakerofchains::break_chain()"
                         },
                         {
+                            "key": "B",
+                            "name": "break chain and cloud_view()",
+                            "type": "command",
+                            "command": "r.runCommand",
+                            "args": "cloud_view(breakerofchains::break_chain())"
+                        },
+                        {
                             "key": "c",
                             "name": "code...",
                             "type": "bindings",
@@ -371,6 +378,13 @@
                                     "command": "r.runCommand",
                                     "args": "devtools::test()"
                                 },
+                                {
+                                    "key": "T",
+                                    "name": "run current test file",
+                                    "type": "command",
+                                    "command": "r.runCommandWithEditorPath",
+                                    "args": "devtools::test_file(\"$$\")"
+                                }
                             ]
                         },
                         {
@@ -643,7 +657,8 @@
     "remote.SSH.configFile": "C:\\Users\\msmcbain\\.ssh\\config",
     "remote.SSH.remotePlatform": {
         "aws-miles-dev": "linux",
-        "qfes-shiny": "linux"
+        "qfes-shiny": "linux",
+        "chonky-the-cat": "linux"
     },
     "vspacecode.bindings": [
         {
@@ -3300,7 +3315,7 @@
     ],
     "editor.lineHeight": 24,
     "liveshare.audio.joinCallBehavior": "accept",
-    "editor.acceptSuggestionOnEnter": "off",
+    "editor.acceptSuggestionOnEnter": "on",
     "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
@@ -3326,7 +3341,6 @@
     "peacock.affectAccentBorders": false,
     "files.insertFinalNewline": true,
     "errorLens.enabled": true,
-    "window.zoomLevel": 1,
     "r.session.viewers.viewColumn": {
         "browser": "Beside"
     },
@@ -3363,6 +3377,13 @@
         "!Split sequence"
     ],
     "workbench.sideBar.location": "right",
-    "workbench.activityBar.visible": false,
-    "terminal.integrated.tabs.enabled": false
+    "github.gitAuthentication": false,
+    "terminal.integrated.tabs.enabled": false,
+    "terminal.integrated.persistentSessionReviveProcess": "never",
+    "Lua.telemetry.enable": false,
+    "editor.suggest.showMethods": true,
+    "editor.suggest.preview": true,
+    "editor.snippetSuggestions": "top",
+    "window.zoomLevel": 1,
+    "liveServer.settings.donotVerifyTags": true
 }

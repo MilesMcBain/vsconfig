@@ -1,7 +1,7 @@
 options(
   repos =
     c(
-      CRAN = "https://cran.rstudio.com"
+      CRAN = "https://mirror.aarnet.edu.au/pub/CRAN"
     )
 )
 options(
@@ -10,6 +10,10 @@ options(
   tidyverse.quiet = TRUE
 )
 
+options(
+  paint_max_width = 80
+)
+paint::mask_print()
 
 options(
   vsc.plot = "Two",
