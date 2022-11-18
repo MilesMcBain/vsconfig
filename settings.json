@@ -58,9 +58,8 @@
         }
     ],
     "terminal.integrated.mouseWheelScrollSensitivity": 0,
-    "editor.fontFamily": "Input",
+    "editor.fontFamily": "Cascadia Code ExtraLight",
     "editor.fontSize": 16,
-    "terminal.integrated.fontFamily": "Hack",
     "terminal.integrated.fontSize": 16,
     "explorer.confirmDelete": false,
     "vim.easymotion": true,
@@ -97,7 +96,7 @@
                             "name": "evaluate in terminal",
                             "type": "command",
                             "command": "workbench.action.terminal.runSelectedText"
-                            
+
                         },
                         {
                             "key": "a",
@@ -109,7 +108,7 @@
                                     "name": "shiny::runApp()",
                                     "type": "command",
                                     "command": "r.runCommandWithEditorPath",
-                                    "args": "shiny::runApp()"                               
+                                    "args": "shiny::runApp()"
                                 }
                             ]
                         },
@@ -294,11 +293,32 @@
                                     "args": "mmstyle::style_file('$$')"
                                 },
                                 {
+                                    "key": "F",
+                                    "name": "format code file (tdcstyle)",
+                                    "type": "command",
+                                    "command": "r.runCommand",
+                                    "args": "tdcstyle::style()"
+                                },
+                                {
+                                    "key": "e",
+                                    "name": "format code file (tdcstyle)",
+                                    "type": "command",
+                                    "command": "r.runCommand",
+                                    "args": "tdcstyle::style(expand_args = TRUE)"
+                                },
+                                {
                                     "key": "s",
                                     "name": "source() code file",
                                     "type": "command",
                                     "command": "r.runCommandWithEditorPath",
                                     "args": "source(\"$$\")"
+                                },
+                                {
+                                    "key": "t",
+                                    "name": "run test file",
+                                    "type": "command",
+                                    "command": "r.runCommandWithEditorPath",
+                                    "args": "testthat::test_file(\"$$\")"
                                 },
                                 {
                                     "key": "l",
@@ -416,6 +436,13 @@
                                     }
                                 }
                             ]
+                        },
+                        {
+                            "key": "R",
+                            "name": "Restart R",
+                            "type": "command",
+                            "command": "r.runCommand",
+                            "args": "rstudioapi::restartSession()"
                         },
                         {
                             "key": "f",
@@ -605,7 +632,6 @@
         }
     ],
     "r.sessionWatcher": true,
-    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
     "r.lsp.debug": true,
     "cSpell.enabledLanguageIds": [
         "asciidoc",
@@ -654,11 +680,9 @@
         "summarising"
     ],
     "gitlens.mode.active": "zen",
-    "remote.SSH.configFile": "C:\\Users\\msmcbain\\.ssh\\config",
+    "remote.SSH.configFile": "~/.ssh/config",
     "remote.SSH.remotePlatform": {
-        "aws-miles-dev": "linux",
-        "qfes-shiny": "linux",
-        "chonky-the-cat": "linux"
+        "camphill01": "linux",
     },
     "vspacecode.bindings": [
         {
@@ -3300,7 +3324,6 @@
     "r.rmarkdown.enableCodeLens": false,
     "files.eol": "\n",
     "editor.renderWhitespace": "none",
-    "diffEditor.ignoreTrimWhitespace": false,
     "workbench.startupEditor": "none",
     "output.smartScroll.enabled": false,
     "docsView.documentationView.updateMode": "sticky",
@@ -3315,7 +3338,7 @@
     ],
     "editor.lineHeight": 24,
     "liveshare.audio.joinCallBehavior": "accept",
-    "editor.acceptSuggestionOnEnter": "on",
+    "editor.acceptSuggestionOnEnter": "off",
     "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
@@ -3330,7 +3353,7 @@
     "editor.lineNumbers": "on",
     "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
     "editor.wordWrap": "off",
-    "workbench.colorTheme": "Gatito Theme",
+    "workbench.colorTheme": "Palenight (Mild Contrast)",
     "editor.bracketPairColorization.enabled": true,
     "terminal.integrated.commandsToSkipShell": [
         "language-julia.interrupt"
@@ -3378,12 +3401,19 @@
     ],
     "workbench.sideBar.location": "right",
     "github.gitAuthentication": false,
-    "terminal.integrated.tabs.enabled": false,
     "terminal.integrated.persistentSessionReviveProcess": "never",
-    "Lua.telemetry.enable": false,
     "editor.suggest.showMethods": true,
     "editor.suggest.preview": true,
     "editor.snippetSuggestions": "top",
-    "window.zoomLevel": 1,
-    "liveServer.settings.donotVerifyTags": true
+    "terminal.integrated.defaultProfile.osx": "bash",
+    "security.workspace.trust.untrustedFiles": "open",
+    "editor.inlineSuggest.enabled": false,
+    "r.alwaysUseActiveTerminal": true,
+    "files.trimTrailingWhitespace": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "terminal.integrated.fontFamily": "Hack Nerd Font",
+    "workbench.activityBar.visible": false,
+    "path-autocomplete.pathMappings": {
+        ".": ["${folder}"]
+    }
 }
