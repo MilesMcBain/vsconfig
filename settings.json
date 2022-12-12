@@ -58,7 +58,7 @@
         }
     ],
     "terminal.integrated.mouseWheelScrollSensitivity": 0,
-    "editor.fontFamily": "Cascadia Code ExtraLight",
+    "editor.fontFamily": "Hack",
     "editor.fontSize": 16,
     "terminal.integrated.fontSize": 16,
     "explorer.confirmDelete": false,
@@ -3118,6 +3118,29 @@
                     ]
                 },
                 {
+                    "key": "languageId:rust",
+                    "name": "Rust",
+                    "type": "bindings",
+                    "bindings": [
+                        {
+                            "key": "c",
+                            "name": "cargo...",
+                            "type": "bindings",
+                            "bindings": [
+                                {
+                                    "key": "r",
+                                    "name": "run",
+                                    "type": "command",
+                                    "command": "workbench.action.terminal.sendSequence",
+                                    "args": {
+                                        "text": "cargo run\n"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
                     "key": "languageId:go",
                     "name": "Go",
                     "type": "bindings",
@@ -3933,7 +3956,7 @@
     "r.alwaysUseActiveTerminal": true,
     "files.trimTrailingWhitespace": true,
     "diffEditor.ignoreTrimWhitespace": false,
-    "terminal.integrated.fontFamily": "Hack Nerd Font",
+    "terminal.integrated.fontFamily": "Hack",
     "workbench.activityBar.visible": false,
     "path-autocomplete.pathMappings": {
         ".": [
