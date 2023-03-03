@@ -58,8 +58,9 @@
         }
     ],
     "terminal.integrated.mouseWheelScrollSensitivity": 0,
-    "editor.fontFamily": "Cascadia Code ExtraLight",
+    "editor.fontFamily": "Hack",
     "editor.fontSize": 16,
+    "editor.fontLigatures": "'calt'",
     "terminal.integrated.fontSize": 16,
     "explorer.confirmDelete": false,
     "vim.easymotion": true,
@@ -80,451 +81,6 @@
             ],
             "commands": [
                 "vspacecode.space"
-            ],
-            "recursive": false
-        },
-        {
-            "before": [
-                ","
-            ],
-            "commands": [
-                {
-                    "command": "whichkey.show",
-                    "args": [
-                        {
-                            "key": "e",
-                            "name": "evaluate in terminal",
-                            "type": "command",
-                            "command": "workbench.action.terminal.runSelectedText"
-                        },
-                        {
-                            "key": "a",
-                            "name": "app...",
-                            "type": "bindings",
-                            "bindings": [
-                                {
-                                    "key": "r",
-                                    "name": "shiny::runApp()",
-                                    "type": "command",
-                                    "command": "r.runCommandWithEditorPath",
-                                    "args": "shiny::runApp()"
-                                }
-                            ]
-                        },
-                        {
-                            "key": "m",
-                            "name": "make...",
-                            "type": "bindings",
-                            "bindings": [
-                                {
-                                    "key": "c",
-                                    "name": "clean drake target at cursor",
-                                    "type": "command",
-                                    "command": "r.runCommandWithSelectionOrWord",
-                                    "args": "drake::clean($$)"
-                                },
-                                {
-                                    "key": "m",
-                                    "name": "Run drake::r_make()",
-                                    "type": "command",
-                                    "command": "r.runCommand",
-                                    "args": "drake::r_make()"
-                                },
-                                {
-                                    "key": "t",
-                                    "name": "Run targets::tar_make()",
-                                    "type": "command",
-                                    "command": "r.runCommand",
-                                    "args": "targets::tar_make()"
-                                },
-                                {
-                                    "key": "T",
-                                    "name": "tar_make() current plan",
-                                    "type": "command",
-                                    "command": "r.runCommand",
-                                    "args": "tflow::rs_tar_make_current_plan()"
-                                },
-                                {
-                                    "key": "p",
-                                    "name": "source .packages.R",
-                                    "type": "command",
-                                    "command": "r.runCommand",
-                                    "args": "source('./packages.R')"
-                                },
-                                {
-                                    "key": "r",
-                                    "name": "loadd drake targert at cursor",
-                                    "type": "command",
-                                    "command": "r.runCommandWithSelectionOrWord",
-                                    "args": "drake::loadd($$)"
-                                },
-                                {
-                                    "key": "l",
-                                    "name": "load targets targert at cursor",
-                                    "type": "command",
-                                    "command": "r.runCommandWithSelectionOrWord",
-                                    "args": "targets::tar_load($$)"
-                                },
-                                {
-                                    "key": "L",
-                                    "name": "load targets targert at cursor from any store",
-                                    "type": "command",
-                                    "command": "r.runCommand",
-                                    "args": "tflow::rs_load_target_at_cursor_from_any_plan()"
-                                },
-                                {
-                                    "key": "w",
-                                    "name": "load target workspace at cursor",
-                                    "type": "command",
-                                    "command": "r.runCommandWithSelectionOrWord",
-                                    "args": "targets::tar_workspace($$)"
-                                },
-                                {
-                                    "key": "e",
-                                    "name": "load editor targets",
-                                    "type": "command",
-                                    "command": "r.runCommand",
-                                    "args": "tflow::rs_load_current_editor_targets()"
-                                }
-                            ]
-                        },
-                        {
-                            "key": "h",
-                            "name": "help...",
-                            "type": "bindings",
-                            "bindings": [
-                                {
-                                    "key": "o",
-                                    "name": "help on object at cursor",
-                                    "type": "command",
-                                    "command": "r.runCommandWithSelectionOrWord",
-                                    "args": "rmdocs::rs_rmd_help()"
-                                },
-                                {
-                                    "key": "h",
-                                    "name": "show hover information on object at cursor",
-                                    "type": "command",
-                                    "command": "editor.action.showHover"
-                                },
-                                {
-                                    "key": "d",
-                                    "name": "show DocsView pane",
-                                    "type": "command",
-                                    "command": "docsView.documentation.focus"
-                                }
-                            ]
-                        },
-                        {
-                            "key": "i",
-                            "name": "insert...",
-                            "type": "bindings",
-                            "bindings": [
-                                {
-                                    "key": "c",
-                                    "name": "insert dput(.chain)",
-                                    "type": "command",
-                                    "command": "r.runCommand",
-                                    "args": "rstudioapi::insertText(paste0(deparse(.chain), collapse = '\n'))"
-                                }
-                            ]
-                        },
-                        {
-                            "key": "o",
-                            "name": "output object",
-                            "type": "command",
-                            "command": "r.runCommandWithSelectionOrWord",
-                            "args": "$$"
-                        },
-                        {
-                            "key": "p",
-                            "name": "portal...",
-                            "type": "bindings",
-                            "bindings": [
-                                {
-                                    "key": "p",
-                                    "name": "portal push ->(0)",
-                                    "type": "command",
-                                    "command": "r.runCommandWithSelectionOrWord",
-                                    "args": "portal::push($$)"
-                                },
-                                {
-                                    "key": "P",
-                                    "name": "portal pull (0)->",
-                                    "type": "command",
-                                    "command": "r.runCommandWithSelectionOrWord",
-                                    "args": "portal::pull(local_name = $$)"
-                                }
-                            ]
-                        },
-                        {
-                            "key": "b",
-                            "name": "break chain and run",
-                            "type": "command",
-                            "command": "r.runCommand",
-                            "args": "breakerofchains::break_chain()"
-                        },
-                        {
-                            "key": "B",
-                            "name": "break chain and cloud_view()",
-                            "type": "command",
-                            "command": "r.runCommand",
-                            "args": "cloud_view(breakerofchains::break_chain())"
-                        },
-                        {
-                            "key": "c",
-                            "name": "code...",
-                            "type": "bindings",
-                            "bindings": [
-                                {
-                                    "key": "a",
-                                    "name": "abort execution",
-                                    "type": "command",
-                                    "command": "r.runCommand",
-                                    "args": "\u0003"
-                                },
-                                {
-                                    "key": "f",
-                                    "name": "format code file (mmstyle)",
-                                    "type": "command",
-                                    "command": "r.runCommandWithEditorPath",
-                                    "args": "mmstyle::style_file('$$')"
-                                },
-                                {
-                                    "key": "F",
-                                    "name": "format code file (tdcstyle)",
-                                    "type": "command",
-                                    "command": "r.runCommand",
-                                    "args": "tdcstyle::style()"
-                                },
-                                {
-                                    "key": "e",
-                                    "name": "format code file (tdcstyle)",
-                                    "type": "command",
-                                    "command": "r.runCommand",
-                                    "args": "tdcstyle::style(expand_args = TRUE)"
-                                },
-                                {
-                                    "key": "s",
-                                    "name": "source() code file",
-                                    "type": "command",
-                                    "command": "r.runCommandWithEditorPath",
-                                    "args": "source(\"$$\")"
-                                },
-                                {
-                                    "key": "t",
-                                    "name": "run test file",
-                                    "type": "command",
-                                    "command": "r.runCommandWithEditorPath",
-                                    "args": "testthat::test_file(\"$$\")"
-                                },
-                                {
-                                    "key": "l",
-                                    "name": "source all files in ./R",
-                                    "type": "command",
-                                    "command": "r.runCommand",
-                                    "args": "lapply(list.files('R', full.names = TRUE), source)"
-                                },
-                                {
-                                    "key": "d",
-                                    "name": "debugonce object at cursor",
-                                    "type": "command",
-                                    "command": "r.runCommandWithSelectionOrWord",
-                                    "args": "debugonce($$)"
-                                },
-                                {
-                                    "key": "r",
-                                    "name": "set error = recover on",
-                                    "type": "command",
-                                    "command": "r.runCommand",
-                                    "args": "options(error = recover)"
-                                },
-                                {
-                                    "key": "R",
-                                    "name": "set error = recover off",
-                                    "type": "command",
-                                    "command": "r.runCommand",
-                                    "args": "options(error = NULL)"
-                                },
-                                {
-                                    "key": "b",
-                                    "name": "browse function source in new window",
-                                    "type": "command",
-                                    "command": "r.runCommandWithSelectionOrWord",
-                                    "args": "rstudioapi::documentNew(paste0(as.character(styler::style_text(deparse($$))), collapse = '\\n'))"
-                                }
-                            ]
-                        },
-                        {
-                            "key": "d",
-                            "name": "devtools...",
-                            "type": "bindings",
-                            "bindings": [
-                                {
-                                    "key": "l",
-                                    "name": "load all",
-                                    "type": "command",
-                                    "command": "r.runCommand",
-                                    "args": "devtools::load_all()"
-                                },
-                                {
-                                    "key": "d",
-                                    "name": "document",
-                                    "type": "command",
-                                    "command": "r.runCommand",
-                                    "args": "devtools::document()"
-                                },
-                                {
-                                    "key": "c",
-                                    "name": "check",
-                                    "type": "command",
-                                    "command": "r.runCommand",
-                                    "args": "devtools::check()"
-                                },
-                                {
-                                    "key": "i",
-                                    "name": "install",
-                                    "type": "command",
-                                    "command": "r.runCommand",
-                                    "args": "devtools::install()"
-                                },
-                                {
-                                    "key": "t",
-                                    "name": "test",
-                                    "type": "command",
-                                    "command": "r.runCommand",
-                                    "args": "devtools::test()"
-                                },
-                                {
-                                    "key": "T",
-                                    "name": "run current test file",
-                                    "type": "command",
-                                    "command": "r.runCommandWithEditorPath",
-                                    "args": "devtools::test_file(\"$$\")"
-                                }
-                            ]
-                        },
-                        {
-                            "key": "r",
-                            "name": "rmarkdown...",
-                            "type": "bindings",
-                            "bindings": [
-                                {
-                                    "key": "r",
-                                    "name": "render document",
-                                    "type": "command",
-                                    "command": "r.runCommandWithEditorPath",
-                                    "args": "callr::r(function() rmarkdown::render(\"$$\", output_format = 'all'))"
-                                },
-                                {
-                                    "key": "v",
-                                    "name": "view document",
-                                    "type": "command",
-                                    "command": "r.runCommandWithEditorPath",
-                                    "args": ".vsc.viewer(gsub('.rmd', '.html', '$$', ignore.case = TRUE))"
-                                },
-                                {
-                                    "key": "c",
-                                    "name": "insert R chunk",
-                                    "type": "command",
-                                    "command": "editor.action.insertSnippet",
-                                    "args": {
-                                        "snippet": "```{r}\n$0\n```"
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "key": "R",
-                            "name": "Restart R",
-                            "type": "command",
-                            "command": "r.runCommand",
-                            "args": "rstudioapi::restartSession()"
-                        },
-                        {
-                            "key": "f",
-                            "name": "function...",
-                            "type": "bindings",
-                            "bindings": [
-                                {
-                                    "key": "f",
-                                    "name": "generate function definiton",
-                                    "type": "command",
-                                    "command": "r.runCommand",
-                                    "args": "fnmate:::rs_fnmate()"
-                                },
-                                {
-                                    "key": "j",
-                                    "name": "jump to function definiton (fnmate)",
-                                    "type": "command",
-                                    "command": "r.runCommand",
-                                    "args": "fnmate::rs_fn_defn_jump()"
-                                }
-                            ]
-                        },
-                        {
-                            "key": "j",
-                            "name": "jump to local definition",
-                            "type": "command",
-                            "command": "editor.action.revealDefinition"
-                        },
-                        {
-                            "key": "s",
-                            "name": "spatial...",
-                            "type": "bindings",
-                            "bindings": [
-                                {
-                                    "key": "v",
-                                    "name": "mapview() object",
-                                    "type": "command",
-                                    "command": "r.runCommandWithSelectionOrWord",
-                                    "args": "mapview::mapview($$)"
-                                },
-                                {
-                                    "key": "e",
-                                    "name": "mapedit() object",
-                                    "type": "command",
-                                    "command": "r.runCommandWithSelectionOrWord",
-                                    "args": "mapedit::editMap(mapview::mapview($$))"
-                                }
-                            ]
-                        },
-                        {
-                            "key": "v",
-                            "name": "view...",
-                            "type": "bindings",
-                            "bindings": [
-                                {
-                                    "key": "v",
-                                    "name": "View() object",
-                                    "type": "command",
-                                    "command": "r.runCommandWithSelectionOrWord",
-                                    "args": "View($$)"
-                                },
-                                {
-                                    "key": "s",
-                                    "name": "str() object",
-                                    "type": "command",
-                                    "command": "r.runCommandWithSelectionOrWord",
-                                    "args": "str($$)"
-                                },
-                                {
-                                    "key": "t",
-                                    "name": "t(head()) object",
-                                    "type": "command",
-                                    "command": "r.runCommandWithSelectionOrWord",
-                                    "args": "t(head($$))"
-                                },
-                                {
-                                    "key": "c",
-                                    "name": "cloud_view() object",
-                                    "type": "command",
-                                    "command": "r.runCommandWithSelectionOrWord",
-                                    "args": "cloud_view($$)"
-                                }
-                            ]
-                        }
-                    ]
-                }
             ],
             "recursive": false
         },
@@ -2833,6 +2389,13 @@
                                     "args": "tdcstyle::style(expand_args = TRUE)"
                                 },
                                 {
+                                    "key": "g",
+                                    "name": "codegrip::addin_reshape",
+                                    "type": "command",
+                                    "command": "r.runCommand",
+                                    "args": "codegrip:::addin_reshape()"
+                                },
+                                {
                                     "key": "s",
                                     "name": "source() code file",
                                     "type": "command",
@@ -3057,7 +2620,204 @@
                                         "snippet": "```{r}\n$0\n```"
                                     }
                                 }
+
                             ]
+                        },
+                        {
+                            "key": "h",
+                            "name": "help...",
+                            "type": "bindings",
+                            "bindings": [
+                                {
+                                    "key": "o",
+                                    "name": "help on object at cursor",
+                                    "type": "command",
+                                    "command": "r.runCommandWithSelectionOrWord",
+                                    "args": "rmdocs::rs_rmd_help()"
+                                },
+                                {
+                                    "key": "h",
+                                    "name": "show hover information on object at cursor",
+                                    "type": "command",
+                                    "command": "editor.action.showHover"
+                                }
+
+                            ]
+                        },
+                        {
+                            "key": "o",
+                            "name": "output object",
+                            "type": "command",
+                            "command": "r.runCommandWithSelectionOrWord",
+                            "args": "$$"
+                        },
+                         {
+                            "key": "c",
+                            "name": "code...",
+                            "type": "bindings",
+                            "bindings": [
+                                {
+                                    "key": "a",
+                                    "name": "abort execution",
+                                    "type": "command",
+                                    "command": "r.runCommand",
+                                    "args": "\u0003"
+                                },
+                                {
+                                    "key": "f",
+                                    "name": "format code file (mmstyle)",
+                                    "type": "command",
+                                    "command": "r.runCommandWithEditorPath",
+                                    "args": "mmstyle::style_file('$$')"
+                                },
+                                {
+                                    "key": "F",
+                                    "name": "format code file (tdcstyle)",
+                                    "type": "command",
+                                    "command": "r.runCommand",
+                                    "args": "tdcstyle::style()"
+                                },
+                                {
+                                    "key": "e",
+                                    "name": "format code file (tdcstyle)",
+                                    "type": "command",
+                                    "command": "r.runCommand",
+                                    "args": "tdcstyle::style(expand_args = TRUE)"
+                                },
+                                {
+                                    "key": "s",
+                                    "name": "source() code file",
+                                    "type": "command",
+                                    "command": "r.runCommandWithEditorPath",
+                                    "args": "source(\"$$\")"
+                                },
+                                {
+                                    "key": "t",
+                                    "name": "run test file",
+                                    "type": "command",
+                                    "command": "r.runCommandWithEditorPath",
+                                    "args": "testthat::test_file(\"$$\")"
+                                },
+                                {
+                                    "key": "l",
+                                    "name": "source all files in ./R",
+                                    "type": "command",
+                                    "command": "r.runCommand",
+                                    "args": "lapply(list.files('R', full.names = TRUE), source)"
+                                },
+                                {
+                                    "key": "d",
+                                    "name": "debugonce object at cursor",
+                                    "type": "command",
+                                    "command": "r.runCommandWithSelectionOrWord",
+                                    "args": "debugonce($$)"
+                                },
+                                {
+                                    "key": "r",
+                                    "name": "set error = recover on",
+                                    "type": "command",
+                                    "command": "r.runCommand",
+                                    "args": "options(error = recover)"
+                                },
+                                {
+                                    "key": "R",
+                                    "name": "set error = recover off",
+                                    "type": "command",
+                                    "command": "r.runCommand",
+                                    "args": "options(error = NULL)"
+                                },
+                                {
+                                    "key": "b",
+                                    "name": "browse function source in new window",
+                                    "type": "command",
+                                    "command": "r.runCommandWithSelectionOrWord",
+                                    "args": "rstudioapi::documentNew(paste0(as.character(styler::style_text(deparse($$))), collapse = '\\n'))"
+                                }
+                            ]
+                        },
+                        {
+                            "key": "m",
+                            "name": "make...",
+                            "type": "bindings",
+                            "bindings": [
+                                {
+                                    "key": "c",
+                                    "name": "clean drake target at cursor",
+                                    "type": "command",
+                                    "command": "r.runCommandWithSelectionOrWord",
+                                    "args": "drake::clean($$)"
+                                },
+                                {
+                                    "key": "m",
+                                    "name": "Run drake::r_make()",
+                                    "type": "command",
+                                    "command": "r.runCommand",
+                                    "args": "drake::r_make()"
+                                },
+                                {
+                                    "key": "t",
+                                    "name": "Run targets::tar_make()",
+                                    "type": "command",
+                                    "command": "r.runCommand",
+                                    "args": "targets::tar_make()"
+                                },
+                                {
+                                    "key": "T",
+                                    "name": "tar_make() current plan",
+                                    "type": "command",
+                                    "command": "r.runCommand",
+                                    "args": "tflow::rs_tar_make_current_plan()"
+                                },
+                                {
+                                    "key": "p",
+                                    "name": "source .packages.R",
+                                    "type": "command",
+                                    "command": "r.runCommand",
+                                    "args": "source('./packages.R')"
+                                },
+                                {
+                                    "key": "r",
+                                    "name": "loadd drake targert at cursor",
+                                    "type": "command",
+                                    "command": "r.runCommandWithSelectionOrWord",
+                                    "args": "drake::loadd($$)"
+                                },
+                                {
+                                    "key": "l",
+                                    "name": "load targets targert at cursor",
+                                    "type": "command",
+                                    "command": "r.runCommandWithSelectionOrWord",
+                                    "args": "targets::tar_load($$)"
+                                },
+                                {
+                                    "key": "L",
+                                    "name": "load targets targert at cursor from any store",
+                                    "type": "command",
+                                    "command": "r.runCommand",
+                                    "args": "tflow::rs_load_target_at_cursor_from_any_plan()"
+                                },
+                                {
+                                    "key": "w",
+                                    "name": "load target workspace at cursor",
+                                    "type": "command",
+                                    "command": "r.runCommandWithSelectionOrWord",
+                                    "args": "targets::tar_workspace($$)"
+                                },
+                                {
+                                    "key": "e",
+                                    "name": "load editor targets",
+                                    "type": "command",
+                                    "command": "r.runCommand",
+                                    "args": "tflow::rs_load_current_editor_targets()"
+                                }
+                            ]
+                        },
+                        {
+                            "key": "b",
+                            "name": "break chain and run",
+                            "type": "command",
+                            "command": "r.runCommand",
+                            "args": "breakerofchains::break_chain()"
                         }
                     ]
                 },
@@ -3875,7 +3635,7 @@
     "editor.lineNumbers": "on",
     "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
     "editor.wordWrap": "off",
-    "workbench.colorTheme": "Palenight (Mild Contrast)",
+    "workbench.colorTheme": "GitHub Dark Dimmed",
     "editor.bracketPairColorization.enabled": true,
     "terminal.integrated.commandsToSkipShell": [
         "language-julia.interrupt"
@@ -3933,11 +3693,14 @@
     "r.alwaysUseActiveTerminal": true,
     "files.trimTrailingWhitespace": true,
     "diffEditor.ignoreTrimWhitespace": false,
-    "terminal.integrated.fontFamily": "Hack Nerd Font",
     "workbench.activityBar.visible": false,
     "path-autocomplete.pathMappings": {
         ".": [
             "${folder}"
         ]
-    }
+    },
+    "terminal.integrated.tabs.enabled": false,
+    "terminal.integrated.fontFamily": "Hack Nerd Font",
+    "editor.minimap.enabled": false,
+    "workbench.editor.enablePreview": false
 }
